@@ -78,7 +78,9 @@ export default function Home() {
       <div className="absolute top-0 right-0 z-50">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className={`p-5 transition ${menuOpen ? "bg-transparent" : "bg-white"}`}
+          className={`p-5 transition ${
+            menuOpen ? "bg-transparent" : "bg-white"
+          }`}
         >
           <AnimatePresence mode="wait">
             {menuOpen ? (
@@ -133,7 +135,9 @@ export default function Home() {
                 alt={col.title}
                 fill
                 className={`object-cover transition-transform duration-500 ${
-                  hoveredIndex === i ? "scale-105 grayscale-0" : "scale-100 grayscale-100"
+                  hoveredIndex === i
+                    ? "scale-105 grayscale-0"
+                    : "scale-100 grayscale-100"
                 }`}
                 priority={i === 0}
               />
@@ -143,7 +147,9 @@ export default function Home() {
             <div className="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row items-end justify-between">
               <div className="mb-4 md:mb-0 relative">
                 <div className="absolute -top-10 -left-1">
-                  {col.logo && <Image src={col.logo} alt="Logo" width={120} height={120} />}
+                  {col.logo && (
+                    <Image src={col.logo} alt="Logo" width={120} height={120} />
+                  )}
                 </div>
                 <p className="text-md uppercase font-bold text-white/70 mb-1 tracking-widest">
                   {"0"}
@@ -154,8 +160,10 @@ export default function Home() {
                 {/* Başlık + Badge */}
                 <h3 className="flex flex-col items-left gap-3 text-xl md:text-2xl font-bold tracking-tight drop-shadow-lg">
                   {col.title}
-                  <span className="px-3 py-1 text-[10px] font-medium text-white/80  
-                 backdrop-blur-md bg-white/10 border border-white/20 tracking-wide">
+                  <span
+                    className="px-3 py-1 text-[10px] font-medium text-white/80  
+                 backdrop-blur-md bg-white/10 border border-white/20 tracking-wide"
+                  >
                     {col.category}
                   </span>
                 </h3>
@@ -166,7 +174,11 @@ export default function Home() {
                   <motion.div
                     className="flex flex-col items-start gap-4"
                     initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1, transition: { delay: 0.3 } }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                      transition: { delay: 0.3 },
+                    }}
                     exit={{ opacity: 0, scale: 0.9 }}
                   >
                     <button className="bg-gradient-to-r w-full hover:backdrop-blur-xl duration-500  border border-white px-4 py-2  text-sm font-semibold shadow-lg">
@@ -174,14 +186,27 @@ export default function Home() {
                     </button>
 
                     {/* What we do panel */}
+                    {/* What we do panel */}
                     <motion.div
                       className="w-full max-w-md py-5 px-6 backdrop-blur-xl bg-black/50 border border-white/20 shadow-2xl pointer-events-auto"
                       initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-                      exit={{ opacity: 0, y: 20, transition: { duration: 0.3 } }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 0.5 },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        y: 20,
+                        transition: { duration: 0.3 },
+                      }}
                     >
-                      <h4 className="text-2xl font-bold mb-3 text-white/90">What we do</h4>
-                      <p className="text-base leading-relaxed text-white/80">{col.description}</p>
+                      <h4 className="text-base sm:text-lg md:text-2xl font-bold mb-3 text-white/90">
+                        What we do
+                      </h4>
+                      <p className="text-xs sm:text-sm md:text-base leading-relaxed text-white/80">
+                        {col.description}
+                      </p>
                     </motion.div>
                   </motion.div>
                 )}
@@ -233,7 +258,13 @@ export default function Home() {
                     className="absolute top-4 right-4 text-white hover:text-red-500"
                     onClick={() => setMenuOpen(false)}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 50 50" fill="white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 50 50"
+                      fill="white"
+                    >
                       <path d="M 7.7 6.3 L 6.3 7.7 23.6 25 6.3 42.3 7.7 43.7 25 26.4 42.3 43.7 43.7 42.3 26.4 25 43.7 7.7 42.3 6.3 25 23.6 7.7 6.3 z" />
                     </svg>
                   </button>
@@ -246,7 +277,9 @@ export default function Home() {
                           <h3 className="text-2xl md:text-4xl font-extrabold mb-4 md:mb-6">
                             {content.title}
                           </h3>
-                          <p className="text-sm md:text-lg leading-relaxed">{content.description}</p>
+                          <p className="text-sm md:text-lg leading-relaxed">
+                            {content.description}
+                          </p>
                         </div>
                       ))}
                   </div>
