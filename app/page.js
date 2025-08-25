@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       description:
         "Buying and selling computers, import/export, assembly, maintenance, and software-hardware consultancy. Also providing data preparation, repair, and online services.",
       gradient: "from-[#0067b8]/0 via-[#0067b8]/20 to-[#0067b8]/90",
+      badgeColor: "#0067b8",
     },
     {
       title: "Exporea",
@@ -26,6 +28,7 @@ export default function Home() {
       description:
         "Construction materials, white goods, home appliances, and automotive products: production, buying/selling, maintenance, repair, and international trade.",
       gradient: "from-[#e13535]/0 via-[#e13535]/20 to-[#e13535]/90",
+      badgeColor: "#e13535",
     },
     {
       title: "Taskina",
@@ -35,15 +38,15 @@ export default function Home() {
       description:
         "Electrical materials, electronic components, industrial machines, and electronic devices manufacturing, buying, selling, import/export.",
       gradient: "from-[#ff8400]/0 via-[#ff8400]/20 to-[#ff8400]/100",
+      badgeColor: "#ff8400",
     },
   ];
 
-const menuItems = [
-  { id: 1, title: "Asak", url: "https://asakgrup.com" },
-  { id: 2, title: "Exporea", url: "https://exporea.com" },
-  { id: 3, title: "Taskina", url: "https://taskina.com" },
-];
-
+  const menuItems = [
+    { id: 1, title: "Asak", url: "/asak" },
+    { id: 2, title: "Exporea", url: "/exporea" },
+    { id: 3, title: "Taskina", url: "/taskina" },
+  ];
 
   const menuContents = [
     {
@@ -81,7 +84,7 @@ const menuItems = [
         >
           <AnimatePresence mode="wait">
             {menuOpen ? (
-             <motion.div
+              <motion.div
                 key="menu"
                 initial={{ rotate: 90, opacity: 0 }}
                 animate={{ rotate: 0, opacity: 1 }}
@@ -141,16 +144,16 @@ const menuItems = [
             </div>
             <div className="absolute top-2 left-2">
               <span
-                className="inline-block px-2 py-1 text-[10px] md:text-xs font-medium text-white/80  
-                                 backdrop-blur-md bg-black/30 border border-white/20 tracking-widest"
+                className="inline-block px-2 py-1 text-[10px] md:text-xs font-medium text-white/90  
+                           backdrop-blur-md border border-white/10 tracking-widest rounded-md"
+                style={{ backgroundColor: `${col.badgeColor}55` }}
               >
                 {col.category}
               </span>
             </div>
-            {/* İçerik container */}
-            <div className="relative z-10  flex flex-col md:flex-row items-start md:items-center justify-between w-full px-6 md:px-12 py-6 gap-16">
-              {/* Category badge: sol üst köşe */}
 
+            {/* İçerik container */}
+            <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between w-full px-6 md:px-12 py-6 gap-16">
               {/* Sol grup: her zaman görünür */}
               <div className="flex flex-col items-start gap-0 md:gap-4">
                 {col.logo && (
@@ -172,7 +175,7 @@ const menuItems = [
                   <motion.div
                     className="flex-1 max-w-md flex flex-col gap-4"
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }} // <--- delay ekledik
+                    animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }}
                     exit={{ opacity: 0, y: 20 }}
                   >
                     <h4 className="text-xs sm:text-sm md:text-2xl font-bold text-white/90">
@@ -181,9 +184,15 @@ const menuItems = [
                     <p className="text-[10px] sm:text-sm md:text-base leading-relaxed text-white/80">
                       {col.description}
                     </p>
-                    <button className="mt-2 bg-gradient-to-r hover:backdrop-blur-xl duration-500 border border-white px-4 py-2 text-sm font-semibold shadow-lg">
-                      Request Quote
-                    </button>
+                    <Link href={`/${col.title.toLowerCase()}`}>
+                      <motion.button
+                        className="mt-2 bg-gradient-to-r hover:backdrop-blur-xl w-full  duration-500 border border-white px-4 py-2 text-sm font-semibold shadow-lg"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        More
+                      </motion.button>
+                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -193,50 +202,47 @@ const menuItems = [
       </main>
 
       {/* Fullscreen Menü */}
-    {/* Fullscreen Menü */}
-<AnimatePresence>
-  {menuOpen && (
-    <motion.div
-      className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center px-4 md:px-0"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      {/* Kapatma ikonu */}
-      <button
-        onClick={() => setMenuOpen(false)}
-        className="absolute top-6 right-6  transition"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 50 50"
-          fill="white"
-        >
-          <path d="M 7.7 6.3 L 6.3 7.7 23.6 25 6.3 42.3 7.7 43.7 25 26.4 42.3 43.7 43.7 42.3 26.4 25 43.7 7.7 42.3 6.3 25 23.6 7.7 6.3 z" />
-        </svg>
-      </button>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center px-4 md:px-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {/* Kapatma ikonu */}
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="absolute top-6 right-6 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 50 50"
+                fill="white"
+              >
+                <path d="M 7.7 6.3 L 6.3 7.7 23.6 25 6.3 42.3 7.7 43.7 25 26.4 42.3 43.7 43.7 42.3 26.4 25 43.7 7.7 42.3 6.3 25 23.6 7.7 6.3 z" />
+              </svg>
+            </button>
 
-    <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-12 md:gap-24 w-full max-w-6xl">
-  {menuItems.map((item) => (
-    <a
-      key={item.id}
-      href={item.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="relative text-xl md:text-3xl font-bold text-white/90 hover:text-white transition
-                 after:block after:absolute after:-bottom-1 after:left-1/2 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-6 hover:after:-translate-x-1/2"
-    >
-      {item.title}
-    </a>
-  ))}
-</div>
-
-    </motion.div>
-  )}
-</AnimatePresence>
-
+            <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-12 md:gap-24 w-full max-w-6xl">
+              {menuItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative text-xl md:text-3xl font-bold text-white/90 hover:text-white transition
+                             after:block after:absolute after:-bottom-1 after:left-1/2 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-6 hover:after:-translate-x-1/2"
+                >
+                  {item.title}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
