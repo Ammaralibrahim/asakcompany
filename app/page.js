@@ -132,7 +132,7 @@ export default function Home() {
                 alt={col.title}
                 fill
                 className={`object-cover transition-transform duration-500 ${
-                  hoveredIndex === i ? "scale-105 grayscale-0" : "scale-100 grayscale-50"
+                  hoveredIndex === i ? "scale-105 grayscale-0" : "scale-100 grayscale-100"
                 }`}
                 priority={i === 0}
               />
