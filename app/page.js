@@ -39,7 +39,7 @@ export default function Home() {
   ];
 
 const menuItems = [
-  { id: 1, title: "Asak", url: "https://asak.com" },
+  { id: 1, title: "Asak", url: "https://asakgrup.com" },
   { id: 2, title: "Exporea", url: "https://exporea.com" },
   { id: 3, title: "Taskina", url: "https://taskina.com" },
 ];
