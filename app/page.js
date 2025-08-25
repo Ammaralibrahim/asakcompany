@@ -33,21 +33,13 @@ export default function Home() {
       description:
         "Electrical materials, electronic components, industrial machines, and electronic devices manufacturing, buying, selling, import/export.",
     },
-    {
-      title: "Services",
-      image: "/services.webp",
-      logo: null,
-      category: "Digital Services",
-      description:
-        "Medical devices, orthopedic products, cosmetics, personal care, spices, dried nuts, and food supplements: buying, selling, export, and import.",
-    },
+  
   ];
 
   const menuItems = [
     { id: 1, title: "Asak" },
     { id: 2, title: "Exporea" },
     { id: 3, title: "Taskina" },
-    { id: 4, title: "Services" },
   ];
 
   const menuContents = [
@@ -69,12 +61,7 @@ export default function Home() {
       description:
         "Electrical materials, electronic components, industrial machines, and electronic devices manufacturing, buying, selling, import/export.",
     },
-    {
-      id: 4,
-      title: "Services Details",
-      description:
-        "Medical devices, orthopedic products, cosmetics, personal care, spices, dried nuts, and food supplements: buying, selling, export, and import.",
-    },
+  
   ];
 
   return (
@@ -164,9 +151,9 @@ export default function Home() {
                 <div className="w-12 h-[2px] bg-white mb-2"></div>
 
                 {/* Başlık + Badge */}
-                <h3 className="flex items-center gap-3 text-xl md:text-2xl font-bold tracking-tight drop-shadow-lg">
+                <h3 className="flex flex-col  items-left gap-3 text-xl md:text-2xl font-bold tracking-tight drop-shadow-lg">
                   {col.title}
-                <span className="px-3 py-1 text-[10px] font-medium text-white/80 rounded-full 
+                <span className="px-3 py-1 text-[10px] font-medium text-white/80  
                  backdrop-blur-md bg-white/10 border border-white/20 tracking-wide">
   {col.category}
 </span>
@@ -194,7 +181,7 @@ export default function Home() {
             </div>
 
             {hoveredIndex === i && (
-              <motion.div className="absolute top-58 inset-0 flex items-center justify-end pr-6 pointer-events-none">
+              <motion.div className="absolute top-28 inset-0 flex items-center justify-end pr-6 pointer-events-none">
                 <div className="max-w-[420px] p-6 rounded-xl pointer-events-auto backdrop-blur-[2px] bg-black/30">
                   <h4 className="text-lg font-semibold mb-3">What we do</h4>
                   <p className="text-sm leading-relaxed text-white/90">{col.description}</p>
