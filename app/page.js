@@ -41,31 +41,31 @@ export default function Home() {
     { id: 3, title: "Taskina" },
   ];
 
- const menuContents = [
-  {
-    id: 1,
-    title: "Asak Details",
-    description: `Buying and selling computers, import/export, assembly, maintenance, and software-hardware consultancy. 
-    We also provide professional data preparation, repair services, and online support for businesses and individuals. 
-    Our team ensures timely delivery, reliable quality control, and customized solutions for tech startups and enterprises. 
-    With a focus on innovation and client satisfaction, Asak has become a trusted partner for technology-related services.`
-  },
-  {
-    id: 2,
-    title: "Exporea Details",
-    description: `Construction materials, white goods, home appliances, and automotive products: production, buying/selling, maintenance, repair, and international trade. 
-    Exporea is dedicated to streamlining procurement processes for businesses, offering high-quality products with competitive pricing. 
-    Our platform connects manufacturers, suppliers, and buyers worldwide, facilitating smooth transactions and operational efficiency. 
-    We ensure reliability, transparency, and global standards in every trade deal.`
-  },
-  {
-    id: 3,
-    title: "Taskina Details",
-    description: `Electrical materials, electronic components, industrial machines, and electronic devices manufacturing, buying, selling, import/export. 
-    Taskina provides a complete service marketplace for businesses seeking specialized equipment and technology solutions. 
-    From sourcing rare components to delivering turnkey solutions, our platform ensures seamless operations and expert support.`
-  },
-];
+  const menuContents = [
+    {
+      id: 1,
+      title: "Asak Details",
+      description: `Buying and selling computers, import/export, assembly, maintenance, and software-hardware consultancy. 
+      We also provide professional data preparation, repair services, and online support for businesses and individuals. 
+      Our team ensures timely delivery, reliable quality control, and customized solutions for tech startups and enterprises. 
+      With a focus on innovation and client satisfaction, Asak has become a trusted partner for technology-related services.`,
+    },
+    {
+      id: 2,
+      title: "Exporea Details",
+      description: `Construction materials, white goods, home appliances, and automotive products: production, buying/selling, maintenance, repair, and international trade. 
+      Exporea is dedicated to streamlining procurement processes for businesses, offering high-quality products with competitive pricing. 
+      Our platform connects manufacturers, suppliers, and buyers worldwide, facilitating smooth transactions and operational efficiency. 
+      We ensure reliability, transparency, and global standards in every trade deal.`,
+    },
+    {
+      id: 3,
+      title: "Taskina Details",
+      description: `Electrical materials, electronic components, industrial machines, and electronic devices manufacturing, buying, selling, import/export. 
+      Taskina provides a complete service marketplace for businesses seeking specialized equipment and technology solutions. 
+      From sourcing rare components to delivering turnkey solutions, our platform ensures seamless operations and expert support.`,
+    },
+  ];
 
   return (
     <div className="bg-gradient-to-b from-gray-900 via-gray-950 to-black text-white min-h-screen relative overflow-hidden">
@@ -117,7 +117,7 @@ export default function Home() {
       </div>
 
       {/* Ana içerik */}
-      <main className="flex  w-full h-screen flex-col md:flex-row">
+      <main className="flex w-full h-screen flex-col md:flex-row">
         {columns.map((col, i) => (
           <motion.div
             key={i}
@@ -195,60 +195,63 @@ export default function Home() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center px-4 md:px-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="flex flex-col md:flex-row items-start justify-center gap-24">
+            <div className="flex flex-col md:flex-row items-start justify-center gap-12 md:gap-24 w-full max-w-6xl">
               {/* Menü itemleri */}
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-row md:flex-col items-center md:items-start justify-between md:justify-start gap-6 md:gap-8 w-full md:w-auto">
                 {menuItems.map((item) => (
                   <button
                     key={item.id}
-                    className={`text-3xl font-bold text-left relative ${
+                    className={`text-xl md:text-3xl font-bold relative ${
                       selectedMenu === item.id ? "text-white" : "text-white/70"
                     }`}
                     onClick={() => setSelectedMenu(item.id)}
                   >
                     {item.title}
                     {selectedMenu === item.id && (
-                      <span className="absolute -bottom-2 left-0 w-full h-1 bg-blue-500 rounded-full"></span>
+                      <span className="absolute -bottom-1 left-0 w-full h-1 bg-blue-500 rounded-full"></span>
                     )}
                   </button>
                 ))}
-
-                {/* Kapatma butonu */}
-                <button
-                  className="mt-12 text-xl font-bold text-red-400 hover:text-red-500"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Close Menu
-                </button>
               </div>
 
-             {/* Menü içeriği */}
-{selectedMenu !== null && (
-  <motion.div
-    key={selectedMenu}
-    className="p-10 rounded-2xl max-w-xl shadow-2xl "
-    initial={{ opacity: 0, x: 50 }}
-    animate={{ opacity: 1, x: 0 }}
-    exit={{ opacity: 0, x: 50 }}
-  >
-    <div className="max-h-[30vh] overflow-y-auto pr-4  scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-800">
-      {menuContents
-        .filter((content) => content.id === selectedMenu)
-        .map((content) => (
-          <div key={content.id}>
-            <h3 className="text-4xl font-extrabold mb-6">{content.title}</h3>
-            <p className="text-lg leading-relaxed">{content.description}</p>
-          </div>
-        ))}
-    </div>
-  </motion.div>
-)}
+              {/* Menü içeriği */}
+              {selectedMenu !== null && (
+                <motion.div
+                  key={selectedMenu}
+                  className="px-6 md:px-10 py-6 md:py-10 rounded-2xl max-w-full md:max-w-xl shadow-2xl bg-black/20 backdrop-blur-md relative"
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 50 }}
+                >
+                  {/* Çarpı butonu */}
+                  <button
+                    className="absolute top-4 right-4 text-white hover:text-red-500"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 50 50" fill="white">
+                      <path d="M 7.7 6.3 L 6.3 7.7 23.6 25 6.3 42.3 7.7 43.7 25 26.4 42.3 43.7 43.7 42.3 26.4 25 43.7 7.7 42.3 6.3 25 23.6 7.7 6.3 z" />
+                    </svg>
+                  </button>
 
+                  <div className="max-h-[50vh] md:max-h-[44vh] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-black/20">
+                    {menuContents
+                      .filter((content) => content.id === selectedMenu)
+                      .map((content) => (
+                        <div key={content.id}>
+                          <h3 className="text-2xl md:text-4xl font-extrabold mb-4 md:mb-6">
+                            {content.title}
+                          </h3>
+                          <p className="text-sm md:text-lg leading-relaxed">{content.description}</p>
+                        </div>
+                      ))}
+                  </div>
+                </motion.div>
+              )}
             </div>
           </motion.div>
         )}
