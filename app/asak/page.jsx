@@ -20,8 +20,8 @@ export default function Home() {
     <div className="bg-gradient-to-b from-gray-900 via-gray-950 to-black text-white">
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Hero />
-      <Services />
       <Projects />
+      <Services />
       <About />
       <Portfolio />
       <Team />

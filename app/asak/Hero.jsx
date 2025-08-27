@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-blue-900 via-black/20 to-blue-900 backdrop-blur-lg border-b border-blue-300/20">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link
+          {/* <Link
             href="/"
             className=" absolute flex p-2 left-12 bg-transparent border rounded-full items-center mr-4 hover:text-blue-400 transition"
           >
@@ -37,7 +37,7 @@ export default function Hero() {
                 d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
               />
             </svg>
-          </Link>
+          </Link> */}
           {/* Logo */}
           <Image
             src="/asak-whitelogo.webp"
@@ -60,9 +60,9 @@ export default function Hero() {
           </div>
 
           {/* CTA Button (Desktop) */}
-          <button className="hidden md:inline-block bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-xs md:text-sm font-semibold shadow-lg transition">
+          <Link href={"/"} className={"hidden md:inline-block bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-xs md:text-sm font-semibold shadow-lg transition"}>
             Get Started
-          </button>
+          </Link>
 
           {/* Hamburger (Mobile) */}
           <button

@@ -155,19 +155,30 @@ export default function Home() {
             {/* İçerik container */}
             <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between w-full px-6 md:px-12 py-6 gap-16">
               {/* Sol grup: her zaman görünür */}
-              <div className="flex flex-col items-start gap-0 md:gap-4">
-                {col.logo && (
-                  <Image src={col.logo} alt="Logo" width={120} height={120} />
-                )}
-                <p className="text-md uppercase font-bold text-white/70 tracking-widest">
-                  {"0"}
-                  {i + 1}
-                </p>
-                <div className="w-12 h-[2px] bg-white"></div>
-                <h3 className="text-xl md:text-2xl font-bold tracking-tight drop-shadow-lg">
-                  {col.title}
-                </h3>
-              </div>
+            {/* Sol grup: her zaman görünür */}
+<div className="flex flex-col items-start gap-0 md:gap-4">
+  {col.logo && (
+    <Image
+      src={
+        col.title === "Exporea" && hoveredIndex === i
+          ? "/exporea-red-logo.webp"
+          : col.logo
+      }
+      alt="Logo"
+      width={120}
+      height={120}
+    />
+  )}
+  <p className="text-md uppercase font-bold text-white/70 tracking-widest">
+    {"0"}
+    {i + 1}
+  </p>
+  <div className="w-12 h-[2px] bg-white"></div>
+  <h3 className="text-xl md:text-2xl font-bold tracking-tight drop-shadow-lg">
+    {col.title}
+  </h3>
+</div>
+
 
               {/* Sağ grup: hoverda görünür */}
               <AnimatePresence>
