@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <motion.section
+    id="about"
       className="py-24 px-4 md:px-12  text-white relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

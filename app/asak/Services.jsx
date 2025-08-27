@@ -57,6 +57,7 @@ export default function Services() {
 
   return (
     <motion.section
+    id="services"
       className="py-24 px-6 md:px-12  text-white relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
