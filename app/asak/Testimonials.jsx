@@ -28,7 +28,7 @@ export default function Testimonials() {
 
   return (
     <motion.section
-      className="py-24 px-4 md:px-12 bg-black/40"
+      className="py-24 px-4 md:px-12 "
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

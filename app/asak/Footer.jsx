@@ -12,7 +12,7 @@ export default function Footer() {
 
   return (
     <motion.footer
-      className="py-12 px-4 md:px-12 bg-black/80 text-white/80"
+      className="py-12 px-4 md:px-12 "
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

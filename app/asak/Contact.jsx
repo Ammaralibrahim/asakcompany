@@ -42,7 +42,7 @@ export default function Contact() {
   return (
     <motion.section
       id="contact"
-      className="py-24 px-4 md:px-12 bg-gradient-to-b from-gray-950 to-black"
+      className="py-24 px-4 md:px-12 "
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

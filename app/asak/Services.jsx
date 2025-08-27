@@ -7,64 +7,155 @@ export default function Services() {
   const services = [
     {
       title: "Custom Computer Assembly",
-      description: "Build high-performance computers tailored for gaming, professional workstations, or enterprise solutions.",
-      icon: "/icons/assembly.svg",
+      description:
+        "We design and build high-performance PCs optimized for gaming, AI research, 3D rendering, and enterprise-grade workloads. Every machine is crafted with precision cooling, future-proof parts, and professional cable management.",
+      image:
+        "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop",
+      icon: "https://cdn-icons-png.flaticon.com/512/1048/1048943.png",
     },
     {
       title: "Global Import/Export",
-      description: "Efficient sourcing and distribution of tech components worldwide with streamlined logistics.",
-      icon: "/icons/globe.svg",
+      description:
+        "We specialize in sourcing and distributing premium hardware components globally. Our logistics network ensures on-time delivery and optimized supply chains across Europe, Asia, and North America.",
+      image:
+        "https://images.unsplash.com/photo-1593642634443-44adaa06623a?q=80&w=1200&auto=format&fit=crop",
+      icon: "https://cdn-icons-png.flaticon.com/512/2972/2972185.png",
     },
     {
       title: "Tech Consultancy",
-      description: "Expert guidance on software development, hardware optimization, and IT infrastructure.",
-      icon: "/icons/consultancy.svg",
+      description:
+        "Our experts provide tailored IT strategies, from cloud migration and cybersecurity to AI integration. We help businesses scale efficiently with the right mix of hardware and software solutions.",
+      image:
+        "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?q=80&w=1200&auto=format&fit=crop",
+      icon: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
     },
     {
       title: "Maintenance & Support",
-      description: "Comprehensive repair, maintenance, and 24/7 online support for all your tech needs.",
-      icon: "/icons/support.svg",
+      description:
+        "24/7 monitoring, fast troubleshooting, and preventive hardware maintenance. Our certified technicians ensure zero downtime for mission-critical systems.",
+      image:
+        "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?q=80&w=1200&auto=format&fit=crop",
+      icon: "https://cdn-icons-png.flaticon.com/512/2910/2910768.png",
     },
     {
       title: "Data Solutions",
-      description: "Secure data preparation, backup, and recovery services for businesses of all sizes.",
-      icon: "/icons/data.svg",
+      description:
+        "From secure on-premise servers to scalable cloud storage, we provide backup, disaster recovery, and encryption services to protect sensitive business data.",
+      image:
+        "https://images.unsplash.com/photo-1593642634443-44adaa06623a?q=80&w=1200&auto=format&fit=crop",
+      icon: "https://cdn-icons-png.flaticon.com/512/942/942748.png",
     },
     {
       title: "Software Development",
-      description: "Custom software solutions to enhance productivity and streamline operations.",
-      icon: "/icons/software.svg",
+      description:
+        "We craft bespoke software tailored to your workflows: CRM systems, automation tools, e-commerce platforms, and AI-driven applications with ongoing support.",
+      image:
+        "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop",
+      icon: "https://cdn-icons-png.flaticon.com/512/906/906324.png",
     },
   ];
 
   return (
     <motion.section
-      className="py-24 px-4 md:px-12 bg-black/40"
+      className="py-24 px-6 md:px-12  text-white relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
     >
-      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center text-white mb-12">
-        Our Services
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {/* Title */}
+      <motion.h2
+        className="text-4xl md:text-5xl font-extrabold tracking-tight text-center mb-20 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300"
+        initial={{ y: -60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+      >
+        Our Cutting-Edge Services
+      </motion.h2>
+
+      {/* Service Grid */}
+      <motion.div
+        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.2 },
+          },
+        }}
+      >
         {services.map((service, index) => (
           <motion.div
             key={index}
-            className="bg-black/60 p-6 border border-white/10 hover:border-[#0067b8] transition-all duration-300"
-            whileHover={{ y: -10, boxShadow: "0 10px 20px rgba(0, 103, 184, 0.3)" }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="relative bg-black/60 backdrop-blur-xl p-6 rounded-2xl border border-blue-400/20 group overflow-hidden"
+            variants={{
+              hidden: { opacity: 0, y: 50, scale: 0.95 },
+              visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+            }}
+          
           >
-            <Image src={service.icon} alt={service.title} width={40} height={40} className="mb-4" />
-            <h3 className="text-lg font-semibold text-white/90">{service.title}</h3>
-            <p className="text-sm text-white/80 mt-2">{service.description}</p>
+            {/* Border Glow */}
+            <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-400/60 transition duration-500"></div>
+
+            {/* Service Image */}
+            <div className="relative w-full h-48 overflow-hidden rounded-xl mb-6">
+              <motion.img
+                src={service.image}
+                alt={service.title}
+                className="object-cover w-full h-full"
+                whileHover={{ scale: 1.1, rotate: 1 }}
+                transition={{ duration: 0.6 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            </div>
+
+            {/* Icon */}
+            <motion.div
+              className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-500/20 group-hover:bg-blue-500/40 mb-4 transition-all"
+              whileHover={{ rotate: 10, scale: 1.1 }}
+            >
+              <Image src={service.icon} alt={service.title} width={28} height={28} className="opacity-90" />
+            </motion.div>
+
+            {/* Title */}
+            <motion.h3
+              className="text-xl font-bold text-white mb-3"
+              initial={{ y: 15, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              {service.title}
+            </motion.h3>
+
+            {/* Description */}
+            <motion.p
+              className="text-sm text-white/80 leading-relaxed mb-6"
+              initial={{ y: 15, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+            >
+              {service.description}
+            </motion.p>
+
+            {/* CTA Button */}
+            <motion.button
+              className="relative overflow-hidden px-5 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-blue-500 to-cyan-400 text-white shadow-lg"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="relative z-10">Learn More →</span>
+              <motion.span
+                className="absolute inset-0 bg-white/20"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: "100%" }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              />
+            </motion.button>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </motion.section>
   );
 }
