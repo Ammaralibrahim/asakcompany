@@ -48,7 +48,7 @@ export default function Contact() {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center text-white mb-12">
+      <h2 className="text-3xl md:text-6xl font-extrabold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
         Contact Us
       </h2>
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">

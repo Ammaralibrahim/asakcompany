@@ -29,30 +29,7 @@ export default function Services() {
         "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?q=80&w=1200&auto=format&fit=crop",
       icon: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
     },
-    {
-      title: "Maintenance & Support",
-      description:
-        "24/7 monitoring, fast troubleshooting, and preventive hardware maintenance. Our certified technicians ensure zero downtime for mission-critical systems.",
-      image:
-        "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?q=80&w=1200&auto=format&fit=crop",
-      icon: "https://cdn-icons-png.flaticon.com/512/2910/2910768.png",
-    },
-    {
-      title: "Data Solutions",
-      description:
-        "From secure on-premise servers to scalable cloud storage, we provide backup, disaster recovery, and encryption services to protect sensitive business data.",
-      image:
-        "https://images.unsplash.com/photo-1593642634443-44adaa06623a?q=80&w=1200&auto=format&fit=crop",
-      icon: "https://cdn-icons-png.flaticon.com/512/942/942748.png",
-    },
-    {
-      title: "Software Development",
-      description:
-        "We craft bespoke software tailored to your workflows: CRM systems, automation tools, e-commerce platforms, and AI-driven applications with ongoing support.",
-      image:
-        "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop",
-      icon: "https://cdn-icons-png.flaticon.com/512/906/906324.png",
-    },
+   
   ];
 
   return (
@@ -65,14 +42,14 @@ export default function Services() {
       transition={{ duration: 1.2, ease: "easeOut" }}
     >
       {/* Title */}
-      <motion.h2
-        className="text-4xl md:text-5xl font-extrabold tracking-tight text-center mb-20 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300"
-        initial={{ y: -60, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
-      >
-        Our Cutting-Edge Services
-      </motion.h2>
+     <motion.h2
+             className="text-3xl md:text-6xl font-extrabold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300"
+             initial={{ y: -50, opacity: 0 }}
+             whileInView={{ y: 0, opacity: 1 }}
+             transition={{ duration: 0.8 }}
+           >
+             Our Services
+           </motion.h2>
 
       {/* Service Grid */}
       <motion.div

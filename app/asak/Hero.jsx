@@ -9,6 +9,7 @@ export default function Hero() {
   const navLinks = [
     { href: "#home", label: "Home" },
     { href: "#services", label: "Services" },
+    { href: "#projects", label: "Projects" },
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" },
   ];
@@ -16,8 +17,27 @@ export default function Hero() {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-blue-950 to-gray-800 overflow-hidden">
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-black/50 via-black/20 to-blue-900 backdrop-blur-lg border-b border-blue-300/20">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-blue-900 via-black/20 to-blue-900 backdrop-blur-lg border-b border-blue-300/20">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <Link
+            href="/"
+            className=" absolute flex p-2 left-12 bg-transparent border rounded-full items-center mr-4 hover:text-blue-400 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+              />
+            </svg>
+          </Link>
           {/* Logo */}
           <Image
             src="/asak-whitelogo.webp"
@@ -87,10 +107,7 @@ export default function Hero() {
                     stroke="currentColor"
                     className="size-10"
                   >
-                    <path
-                     
-                      d="M6 18 18 6M6 6l12 12"
-                    />
+                    <path d="M6 18 18 6M6 6l12 12" />
                   </svg>
                 </span>
                 <span className=" bg-white -rotate-45 -translate-y-1"></span>
@@ -123,14 +140,14 @@ export default function Hero() {
           src="/asak-hero-image.webp"
           alt="Hero Background"
           fill
-          className="object-cover opacity-60"
+          className="object-cover "
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-black/40 to-transparent" />
 
         <div className="relative z-10 flex items-center">
           <div className="w-full  max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-xl rounded-3xl border border-blue-300/20 bg-gradient-to-b from-blue-900/30 via-blue-800/20 to-black/20 p-6 sm:p-8 md:p-10 backdrop-blur-md shadow-[0_10px_60px_rgba(59,130,246,0.25)] text-center">
+            <div className="mx-auto max-w-xl rounded-3xl border border-blue-300/20 bg-gradient-to-b from-blue-900/70 via-blue-800/20 to-black/100 p-6 sm:p-8 md:p-10 backdrop-blur-md shadow-[0_10px_60px_rgba(59,130,246,0.25)] text-center">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 Enjoy our free Asak trial Month
               </h1>

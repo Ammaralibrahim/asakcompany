@@ -34,7 +34,7 @@ export default function Testimonials() {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center text-white mb-12">
+      <h2 className="text-3xl md:text-6xl font-extrabold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
         What Our Clients Say
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">

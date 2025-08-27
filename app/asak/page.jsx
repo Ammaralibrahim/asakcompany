@@ -11,6 +11,7 @@ import BlogPreview from "./BlogPreview";
 import Partners from "./Partners";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import Projects from "./Projects";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,6 +21,7 @@ export default function Home() {
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Hero />
       <Services />
+      <Projects />
       <About />
       <Portfolio />
       <Team />
