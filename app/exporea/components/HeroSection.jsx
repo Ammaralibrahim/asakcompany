@@ -33,7 +33,6 @@ const counterVariants = {
 export default function HeroSection() {
   const heroRef = useRef(null);
 
-  // Typing and deleting animation
   const phrases = ["Innovative Solutions", "Digital World", "Future Technology"];
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
@@ -67,17 +66,17 @@ export default function HeroSection() {
     <section
       ref={heroRef}
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0"
+      className="min-h-screen flex items-center justify-center px-4 md:px-16 pt-20 md:pt-0"
     >
       <motion.div
-        className="relative z-10 container mx-auto px-4 md:px-16 flex flex-col md:flex-row items-center justify-between"
+        className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-[1200px]"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Left Side */}
-        <motion.div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0" variants={childVariants}>
-          <motion.h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        <motion.div className="w-full md:w-1/2 flex flex-col items-center md:items-start mb-8 md:mb-0" variants={childVariants}>
+          <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-center md:text-left">
             {displayedText}
             <motion.span
               className="inline-block w-1 h-8 bg-red-500 ml-1"
@@ -85,16 +84,16 @@ export default function HeroSection() {
               transition={{ duration: 0.5, repeat: Infinity, ease: "easeInOut" }}
             />
           </motion.h1>
-          <motion.div className="flex justify-center md:justify-start space-x-6 mb-8" variants={containerVariants}>
+          <motion.div className="flex flex-wrap justify-center md:justify-start gap-6 mb-8" variants={containerVariants}>
             {["03", "05", "09"].map((num, index) => (
               <motion.div key={num} className="text-center" variants={counterVariants} whileHover="hover">
-                <motion.span className="text-5xl md:text-7xl font-extrabold text-red-500">{num}</motion.span>
-                <p className="text-sm opacity-80">Metric {index + 1}</p>
+                <motion.span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold text-red-500">{num}</motion.span>
+                <p className="text-xs sm:text-sm opacity-80">Metric {index + 1}</p>
               </motion.div>
             ))}
           </motion.div>
           <motion.button
-            className="bg-gradient-to-r from-red-500 to-red-700 px-8 py-3 rounded-full font-semibold"
+            className="bg-gradient-to-r from-red-500 to-red-700 px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold text-sm sm:text-base"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
@@ -103,16 +102,21 @@ export default function HeroSection() {
           </motion.button>
         </motion.div>
 
-        {/* Right Side: Static Laptop Image */}
-        <motion.div
-          className="w-full md:w-1/2"
-          variants={childVariants}
-        >
-          <img
-            src="/hero-laptop.webp"
-            alt="Laptop"
-            className="absolute right-0 -top-15 h-[550px] object-cover"
-          />
+        {/* Right Side: Laptop */}
+        <motion.div className="w-full md:w-1/2 flex justify-center md:justify-end mb-8 md:mb-0" variants={childVariants}>
+         <img
+  src="/hero-laptop.webp"
+  alt="Laptop"
+  className="
+    w-full 
+    max-w-[500px]   /* mobile biraz daha büyük */
+    sm:max-w-[600px] 
+    md:max-w-[650px] 
+    lg:max-w-[750px] 
+    object-cover
+  "
+/>
+
         </motion.div>
       </motion.div>
     </section>

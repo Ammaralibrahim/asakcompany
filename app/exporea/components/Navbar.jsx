@@ -74,39 +74,57 @@ export default function Navbar() {
           aria-label="Toggle menu"
           className="text-white"
         >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          {menuOpen ? <X size={28} color="white" /> : <Menu size={28} color="white" />}
         </button>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.4, type: "spring" }}
-            className="absolute top-0 right-0 w-2/3 h-screen bg-black/90 backdrop-blur-lg shadow-xl flex flex-col items-center justify-center space-y-8 md:hidden"
-          >
-            {menuItems.map((item, index) => (
-              <motion.a
-                key={index}
-                href={`#${item.toLowerCase()}`}
-                className="text-2xl font-semibold text-white relative"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item}
-                <motion.span
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500"
-                  initial={{ scaleX: 0, scaleY: 0.5 }}
-                  whileHover={{ scaleX: 1, scaleY: 1 }}
-                  transition={{ duration: 0.3, ease: "easeOut", type: "spring", stiffness: 200 }}
-                />
-              </motion.a>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+ <AnimatePresence>
+  {menuOpen && (
+    <motion.div
+      initial={{ opacity: 0, x: "100%" }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: "100%" }}
+      transition={{ duration: 0.4, type: "spring" }}
+      drag="x"
+      dragConstraints={{ left: 0, right: 0 }}
+      dragElastic={0.2}
+      onDragEnd={(event, info) => {
+        if (info.point.x > window.innerWidth * 0.9) {
+          setMenuOpen(false);
+        }
+      }}
+      className="absolute top-0 right-0 w-2/3 h-screen bg-black/90 backdrop-blur-lg shadow-xl flex flex-col items-center justify-center space-y-8 md:hidden"
+    >
+      {/* Close Button inside menu */}
+      <button
+        onClick={() => setMenuOpen(false)}
+        className="absolute top-6 left-4 text-white z-50"
+        aria-label="Close menu"
+      >
+        <X size={28} />
+      </button>
+
+      {menuItems.map((item, index) => (
+        <motion.a
+          key={index}
+          href={`#${item.toLowerCase()}`}
+          className="text-2xl font-semibold text-white relative"
+          onClick={() => setMenuOpen(false)}
+        >
+          {item}
+          <motion.span
+            className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500"
+            initial={{ scaleX: 0, scaleY: 0.5 }}
+            whileHover={{ scaleX: 1, scaleY: 1 }}
+            transition={{ duration: 0.3, ease: "easeOut", type: "spring", stiffness: 200 }}
+          />
+        </motion.a>
+      ))}
+    </motion.div>
+  )}
+</AnimatePresence>
+
     </motion.nav>
   );
 }
