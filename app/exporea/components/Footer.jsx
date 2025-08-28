@@ -8,7 +8,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-tr from-black via-gray-900 to-red-700 text-white">
+    <footer className="relative bg-gradient-to-t from-black/100 to-transparent   text-white">
       {/* Wave SVG */}
     
 
