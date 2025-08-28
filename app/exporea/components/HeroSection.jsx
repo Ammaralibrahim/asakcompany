@@ -111,7 +111,7 @@ export default function HeroSection() {
           <img
             src="/hero-laptop.webp"
             alt="Laptop"
-            className="absolute right-0 top-0 h-[500px] object-cover"
+            className="absolute right-0 -top-15 h-[550px] object-cover"
           />
         </motion.div>
       </motion.div>
