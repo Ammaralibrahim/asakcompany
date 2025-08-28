@@ -49,7 +49,7 @@ export default function Partners() {
         {partners.map((partner, index) => (
           <motion.div
             key={index}
-            className="flex items-center justify-center p-4 rounded-xl bg-black/30 backdrop-blur-md"
+            className="flex items-center justify-center p-4 rounded-xl bg-gradient-to-r from-red-600/50 to-black/70 backdrop-blur-md"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
          

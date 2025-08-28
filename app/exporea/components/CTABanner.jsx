@@ -5,7 +5,7 @@ export default function CTABanner() {
   return (
     <section className="relative py-16 bg-transparent    text-white">
       <motion.div
-        className="container max-w-3xl mx-auto px-6 md:px-16 text-center bg-gradient-to-r from-red-600 to-black/80 backdrop-blur-md rounded-2xl p-8 shadow-lg"
+        className="container max-w-3xl mx-auto px-6 md:px-16 text-center bg-gradient-to-r from-red-600/50 to-black/70 backdrop-blur-md rounded-2xl p-8 shadow-lg"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}

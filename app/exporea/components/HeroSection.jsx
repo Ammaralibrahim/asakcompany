@@ -67,7 +67,7 @@ export default function HeroSection() {
     <section
       ref={heroRef}
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0 "
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0"
     >
       <motion.div
         className="relative z-10 container mx-auto px-4 md:px-16 flex flex-col md:flex-row items-center justify-between"
@@ -103,26 +103,15 @@ export default function HeroSection() {
           </motion.button>
         </motion.div>
 
-        {/* Right Side: Laptop with Slippery Spring Animation */}
+        {/* Right Side: Static Laptop Image */}
         <motion.div
-          className="w-full md:w-1/2 relative"
+          className="w-full md:w-1/2"
           variants={childVariants}
-          drag
-          dragConstraints={{ left: -50, right: 50, top: -50, bottom: 50 }}
-          dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-          whileDrag={{ scale: 1.05, rotate: 2 }}
         >
-          <motion.img
-            src="/laptop-image.png"
+          <img
+            src="/hero-laptop.webp"
             alt="Laptop"
-            className="absolute right-0 top-0 h-full object-cover"
-            style={{ transform: "translateX(50%)" }}
-            animate={{
-              x: [0, -30],
-              y: [0, -20],
-              rotate: [0, 5],
-            }}
-            transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+            className="absolute right-0 top-0 h-[500px] object-cover"
           />
         </motion.div>
       </motion.div>

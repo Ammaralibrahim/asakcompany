@@ -80,7 +80,7 @@ export default function PricingSection() {
           your B2B marketplace presence with the right plan.
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl bg-gradient-to-r from-red-600 to-black/80 backdrop-blur-md rounded-2xl p-8 shadow-lg">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl bg-gradient-to-r from-red-600/50 to-black/70 backdrop-blur-md rounded-2xl p-8 shadow-lg">
           {plans.map((plan, index) => (
             <motion.div
               key={index}

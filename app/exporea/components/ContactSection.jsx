@@ -30,7 +30,7 @@ export default function ContactSection() {
   return (
   <section className="relative py-24 bg-transparent    text-white">
   <motion.div
-    className="container mx-auto px-4 md:px-16 flex flex-col items-center text-center bg-gradient-to-r from-red-600 to-black/80 backdrop-blur-md rounded-2xl p-8 shadow-lg"
+    className="container mx-auto px-4 md:px-16 flex flex-col items-center text-center bg-gradient-to-r from-red-600/50 to-black/70 backdrop-blur-md rounded-2xl p-8 shadow-lg"
     variants={containerVariants}
     initial="hidden"
     animate="visible"

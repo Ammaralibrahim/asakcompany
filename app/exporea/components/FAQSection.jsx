@@ -36,7 +36,7 @@ export default function FAQSection() {
           Everything you need to know about our platform.
         </p>
 
-        <div className="max-w-3xl mx-auto space-y-6 bg-gradient-to-r from-red-600 to-black/80 backdrop-blur-md rounded-2xl p-8 shadow-lg">
+        <div className="max-w-3xl mx-auto space-y-6 bg-gradient-to-r from-red-600/50 to-black/70 backdrop-blur-md rounded-2xl p-8 shadow-lg">
           {faqs.map((faq, i) => (
             <motion.div
               key={i}

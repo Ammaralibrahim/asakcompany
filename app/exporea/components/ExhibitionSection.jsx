@@ -141,7 +141,7 @@ export default function ExhibitionSection() {
 
         {/* Right Side: Features */}
       <motion.div 
-  className="w-full text-center p-8 rounded-2xl bg-gradient-to-r from-red-600 to-black/80 backdrop-blur-md rounded-2xl p-8 shadow-lg"
+  className="w-full text-center p-8 rounded-2xl bg-gradient-to-r from-red-600/50 to-black/70 backdrop-blur-md rounded-2xl p-8 shadow-lg"
   variants={childVariants}
 >
   <motion.h2 className="text-3xl md:text-5xl font-bold mb-4 text-white" variants={childVariants}>
@@ -154,7 +154,7 @@ export default function ExhibitionSection() {
     {features.map((feature, index) => (
       <motion.div 
         key={index} 
-        className="flex flex-col items-center text-center space-y-4 group cursor-pointer p-6 rounded-xl bg-black/20 backdrop-blur-md hover:bg-red-500/20 transition-all"
+        className="flex flex-col items-center text-center space-y-4 group cursor-pointer p-6 rounded-xl bg-black/80 backdrop-blur-md hover:bg-red-500/20 transition-all"
         variants={featureVariants} 
         whileHover="hover"
       >

@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 w-full z-20 bg-transparent px-4 md:px-16 py-4 flex items-center justify-between shadow-lg"
+      className="fixed top-0 left-0 w-full z-20 bg-gradient-to-r from-red-600 to-black/30 px-4 md:px-16 py-4 flex items-center justify-between shadow-xl"
       variants={navbarVariants}
       initial="hidden"
       animate="visible"

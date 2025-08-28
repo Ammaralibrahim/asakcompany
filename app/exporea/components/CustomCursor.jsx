@@ -5,13 +5,14 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 export default function CustomCursor() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const springX = useSpring(mouseX, { stiffness: 150, damping: 20, mass: 0.5 });
-  const springY = useSpring(mouseY, { stiffness: 150, damping: 20, mass: 0.5 });
+  // Slightly softer spring for smoother, iPhone-like feel
+  const springX = useSpring(mouseX, { stiffness: 500, damping: 20, mass: 0.4 });
+  const springY = useSpring(mouseY, { stiffness: 500, damping: 20, mass: 0.4 });
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      mouseX.set(e.clientX - 16);
-      mouseY.set(e.clientY - 16);
+      mouseX.set(e.clientX - 8); // Adjusted for smaller cursor size
+      mouseY.set(e.clientY - 8);
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
@@ -19,10 +20,10 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed w-8 h-8 bg-red-500 rounded-full opacity-50 pointer-events-none z-50 mix-blend-difference"
+      className="fixed w-4 h-4 bg-blue-300 rounded-full opacity-60 pointer-events-none z-50 shadow-[0_0_8px_2px_rgba(59,130,246,0.5)]"
       style={{ x: springX, y: springY }}
-      animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
-      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+      animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.8, 0.6] }}
+      transition={{ duration: 0.6, repeat: Infinity, ease: "easeInOut" }}
     />
   );
 }
