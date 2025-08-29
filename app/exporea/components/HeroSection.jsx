@@ -69,7 +69,7 @@ export default function HeroSection() {
       className="min-h-screen flex items-center justify-center px-4 md:px-16 pt-20 md:pt-0"
     >
       <motion.div
-        className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-[1200px]"
+        className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-[90vw] lg:max-w-[1600px] xl:max-w-[2000px] gap-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -103,7 +103,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Right Side: Laptop */}
-        <motion.div className="w-full md:w-auto flex justify-center md:justify-end mb-8 md:mb-0" variants={childVariants}>
+        <motion.div className="w-full md:w-1/2 flex justify-center md:justify-end mb-8 md:mb-0" variants={childVariants}>
     <img
   src="/hero-laptop.webp"
   alt="Laptop"
@@ -112,7 +112,7 @@ export default function HeroSection() {
     max-w-[500px]   /* Mobile screens */
     sm:max-w-[600px] /* Small screens */
     md:max-w-[700px] /* Medium screens */
-    lg:min-w-[800px] /* Large screens */
+    lg:max-w-[800px] /* Large screens */
     xl:max-w-[900px] /* Extra-large screens */
     object-cover
   "
