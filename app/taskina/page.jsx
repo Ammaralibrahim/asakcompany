@@ -1,26 +1,21 @@
-// app/taskina/page.tsx
-'use client';
+"use client";
 
-import Hero from './Hero';
-import Navbar from './Navbar';
-import Features from './Features';
-import HowItWorks from './HowItWorks';
-import About from './About';
-import Testimonials from './Testimonials';
-import Pricing from './Pricing';
-import Footer from './Footer';
+import React from "react";
+import HeroSection from "./HeroSection";
+import TaskinaExhibitionSection from "./ExhibitionSection";
+import PricingSection from "./PricingSection";
+import ContactSection from "./ContactSection";
 
-export default function TaskinaPage() {
+export default function Page() {
   return (
-    <div className="bg-lightgray text-gray-900 overflow-hidden">
-      {/* <Navbar /> */}
-      <Hero />
-      <Features />
-      <HowItWorks />
-      <About />
-      <Testimonials />
-      <Pricing />
-      <Footer />
+    <div className="bg-gray-900">
+      {/* Hero */}
+      <HeroSection />
+
+      {/* Features / Exhibition */}
+      <TaskinaExhibitionSection />
+      <PricingSection />
+      <ContactSection/>
     </div>
   );
 }

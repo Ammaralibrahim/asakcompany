@@ -104,16 +104,16 @@ export default function HeroSection() {
 
         {/* Right Side: Laptop */}
         <motion.div className="w-full md:w-1/2 flex justify-center md:justify-end mb-8 md:mb-0" variants={childVariants}>
-    <img
+<img
   src="/hero-laptop.webp"
   alt="Laptop"
   className="
     w-full 
     max-w-[500px]   /* Mobile screens */
-    sm:max-w-[600px] /* Small screens */
-    md:max-w-[700px] /* Medium screens */
-    lg:max-w-[800px] /* Large screens */
-    xl:max-w-[900px] /* Extra-large screens */
+    sm:max-w-[700px] /* Small screens - increased from 600px */
+    md:max-w-[800px] /* Medium screens - increased from 700px */
+    lg:max-w-[900px] /* Large screens - increased from 800px */
+    xl:max-w-[1000px] /* Extra-large screens - increased from 900px */
     object-cover
   "
 />

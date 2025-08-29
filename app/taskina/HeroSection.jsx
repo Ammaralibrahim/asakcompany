@@ -1,0 +1,29 @@
+"use client";
+import Image from "next/image";
+import Navbar from "./components/Navbar";
+import ParticlesBackground from "./components/ParticlesBackground";
+import HeroContent from "./components/HeroContent";
+
+const HeroSection = () => {
+  return (
+    <div className="relative  w-full overflow-hidden flex flex-col">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/taskina-hero.svg"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      <ParticlesBackground />
+      <Navbar />
+      <div className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center z-20 py-12 sm:py-16">
+        <HeroContent />
+      </div>
+    </div>
+  );
+};
+
+export default HeroSection;
