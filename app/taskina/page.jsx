@@ -9,7 +9,7 @@ import ContactSection from "./ContactSection";
 import ParticlesBackground from "./components/ParticlesBackground";
 import FooterSection from "./FooterSection";
 import Navbar from "./components/Navbar";
-
+import ApplicationPreview from "./ApplicationPreview";
 const buttonVariants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
@@ -41,6 +41,9 @@ export default function Page() {
 
       {/* Features / Exhibition */}
       <TaskinaExhibitionSection />
+
+
+      <ApplicationPreview />
 
       {/* Pricing */}
       <PricingSection />
