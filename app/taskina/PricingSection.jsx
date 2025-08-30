@@ -114,8 +114,8 @@ const particles = Array.from({ length: 20 }).map((_, i) => ({
 export default function PricingSection() {
   return (
 <section
-  className="relative w-full min-h-screen flex items-center justify-center py-20 overflow-hidden "
- 
+  className="relative w-full min-h-screen flex items-center justify-center py-20 overflow-hidden"
+  id="pricing"
 >
 
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 bg-[#ff8006]/20 backdrop-blur-xl p-6 rounded-2xl">

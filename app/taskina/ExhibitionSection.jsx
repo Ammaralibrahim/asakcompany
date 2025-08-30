@@ -106,7 +106,9 @@ export default function TaskinaExhibitionSection() {
   };
 
   return (
-    <section className="relative w-full min-h-[80vh] flex items-center justify-center py-12 overflow-hidden">
+    <section className="relative w-full min-h-[80vh] flex items-center justify-center py-12 overflow-hidden"
+    id="features"
+    >
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           className="flex flex-col lg:flex-row items-center justify-between gap-8 bg-[#ff8006]/20 backdrop-blur-xl p-4 rounded-xl"

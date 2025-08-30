@@ -8,6 +8,7 @@ import PricingSection from "./PricingSection";
 import ContactSection from "./ContactSection";
 import ParticlesBackground from "./components/ParticlesBackground";
 import FooterSection from "./FooterSection";
+import Navbar from "./components/Navbar";
 
 const buttonVariants = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -31,6 +32,8 @@ export default function Page() {
       className="bg-cover bg-center bg-no-repeat relative"
       style={{ backgroundImage: "url('/site-bg.svg')" }}
     >
+            <Navbar />
+
       <ParticlesBackground />
 
       {/* Hero */}
@@ -50,7 +53,7 @@ export default function Page() {
 
       {/* Scroll to Top Button */}
       <motion.button
-        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[2.5rem] h-[2.5rem] sm:w-[3rem] sm:h-[3rem] bg-[#ff8006] rounded-full flex items-center justify-center shadow-lg"
+        className="fixed bottom-4 left-4 sm:bottom-6 sm:right-6 z-50 w-[2.5rem] h-[2.5rem] sm:w-[3rem] sm:h-[3rem] bg-[#ff8006] rounded-full flex items-center justify-center shadow-lg"
         variants={buttonVariants}
         initial="hidden"
         animate="visible"

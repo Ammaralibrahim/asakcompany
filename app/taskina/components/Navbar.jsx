@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 
 const navItems = ["Home", "Features", "Pricing", "Contact"];
 
@@ -10,7 +9,7 @@ const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <nav className="w-full ">
+ <nav className="w-full  sm:fixed z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-start space-x-4">
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-2">

@@ -47,7 +47,8 @@ const linkVariants = {
 
 export default function FooterSection() {
   return (
-    <footer className="relative w-full py-8 bg-[#ff8006]/20 backdrop-blur-xl overflow-hidden z-50">
+    <footer className="relative w-full py-8 bg-[#ff8006]/20 backdrop-blur-xl overflow-hidden z-50"
+    id="footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="flex flex-col items-center gap-6 text-center"
