@@ -5,17 +5,27 @@ import HeroSection from "./HeroSection";
 import TaskinaExhibitionSection from "./ExhibitionSection";
 import PricingSection from "./PricingSection";
 import ContactSection from "./ContactSection";
+import ParticlesBackground from "./components/ParticlesBackground";
 
 export default function Page() {
   return (
-    <div className="bg-gray-900">
+    <div
+      className="bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/site-bg.svg')" }}
+    >
+            <ParticlesBackground />
+      
       {/* Hero */}
       <HeroSection />
 
       {/* Features / Exhibition */}
       <TaskinaExhibitionSection />
+
+      {/* Pricing */}
       <PricingSection />
-      <ContactSection/>
+
+      {/* Contact */}
+      <ContactSection />
     </div>
   );
 }

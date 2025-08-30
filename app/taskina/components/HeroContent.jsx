@@ -8,7 +8,7 @@ const HeroContent = () => {
     <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-8">
       {/* Left Side */}
       <motion.div
-        className="w-full lg:w-1/2 space-y-6 text-center lg:text-left"
+        className="w-full lg:w-1/2 space-y-6 text-center lg:text-left bg-[#ff8006]/20 backdrop-blur-xl p-6 rounded-2xl"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -23,7 +23,7 @@ const HeroContent = () => {
         </p>
         <Link
           href="#download"
-          className="inline-block bg-white text-gray-900 px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold transition-colors duration-300"
+          className="inline-block bg-[#ff8006] text-gray-900 px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold transition-colors duration-300"
         >
           Get Started
         </Link>

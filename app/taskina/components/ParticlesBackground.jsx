@@ -20,7 +20,7 @@ const ParticlesBackground = () => {
   return (
     <div
       aria-hidden
-      className="absolute inset-0 z-10 pointer-events-none"
+      className="fixed inset-0 z-10 pointer-events-none"
       style={{ perspective: 1000, WebkitPerspective: 1000 }}
     >
       <div className="relative w-full h-full transform-style-preserve-3d">
@@ -40,16 +40,8 @@ const ParticlesBackground = () => {
               backgroundColor: "#ff8006",
             }}
             animate={{
-              y: [
-                p.top - 3,
-                p.top + 3,
-                p.top - 2
-              ],
-              x: [
-                p.left - 3,
-                p.left + 3,
-                p.left - 1.5
-              ],
+              y: [p.top - 3, p.top + 3, p.top - 2],
+              x: [p.left - 3, p.left + 3, p.left - 1.5],
               rotate: [0, 45, -10, 0],
             }}
             transition={{

@@ -113,73 +113,12 @@ const particles = Array.from({ length: 20 }).map((_, i) => ({
 
 export default function PricingSection() {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center py-20 bg-white overflow-hidden">
-      {/* Animated Wave and Particle Background */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1920 1080">
-          <defs>
-            <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{ stopColor: "#e67305", stopOpacity: 1 }} />
-              <stop offset="50%" style={{ stopColor: "#ff8006", stopOpacity: 1 }} />
-              <stop offset="100%" style={{ stopColor: "#ff9a3d", stopOpacity: 1 }} />
-            </linearGradient>
-            <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{ stopColor: "#d96604", stopOpacity: 1 }} />
-              <stop offset="50%" style={{ stopColor: "#ff8006", stopOpacity: 1 }} />
-              <stop offset="100%" style={{ stopColor: "#ffab66", stopOpacity: 1 }} />
-            </linearGradient>
-            <linearGradient id="waveGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{ stopColor: "#cc5903", stopOpacity: 1 }} />
-              <stop offset="50%" style={{ stopColor: "#ff8006", stopOpacity: 1 }} />
-              <stop offset="100%" style={{ stopColor: "#ffbc6b", stopOpacity: 1 }} />
-            </linearGradient>
-          </defs>
-          {/* Waves */}
-          <motion.path
-            d="M0,350 C200,250 400,450 600,350 C800,250 1000,450 1200,350 C1400,250 1600,450 1920,350 L1920,1080 L0,1080 Z"
-            fill="url(#waveGradient1)"
-            variants={waveVariants}
-            animate="animate"
-          />
-          <motion.path
-            d="M0,450 C150,350 350,550 550,450 C750,350 950,550 1150,450 C1350,350 1550,550 1920,450 L1920,1080 L0,1080 Z"
-            fill="url(#waveGradient2)"
-            variants={waveVariants}
-            animate="animate"
-            initial={{ y: 15 }}
-            transition={{ delay: 0.5 }}
-          />
-          <motion.path
-            d="M0,550 C100,450 300,650 500,550 C700,450 900,650 1100,550 C1300,450 1500,650 1920,550 L1920,1080 L0,1080 Z"
-            fill="url(#waveGradient3)"
-            variants={waveVariants}
-            animate="animate"
-            initial={{ y: 30 }}
-            transition={{ delay: 1 }}
-          />
-          {/* Particles */}
-          {particles.map((particle) => (
-            <motion.circle
-              key={particle.id}
-              cx={particle.cx}
-              cy={particle.cy}
-              r={particle.r}
-              fill="#ff8006"
-              variants={particleVariants}
-              animate="animate"
-              initial={{ opacity: 0 }}
-              transition={{ delay: Math.random() * 2 }}
-            />
-          ))}
-        </svg>
-      </motion.div>
+<section
+  className="relative w-full min-h-screen flex items-center justify-center py-20 overflow-hidden "
+ 
+>
 
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 bg-[#ff8006]/20 backdrop-blur-xl p-6 rounded-2xl">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 50 }}
