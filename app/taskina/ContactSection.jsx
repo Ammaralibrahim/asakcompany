@@ -64,24 +64,24 @@ export default function ContactSection() {
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full p-4 border border-gray-300 rounded-lg focus:ring-[#ff8006] focus:border-[#ff8006] outline-none text-base"
+                className="w-full p-4 border border-gray-300 text-black rounded-lg focus:ring-[#ff8006] focus:border-[#ff8006] outline-none text-base"
                 required
               />
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-full p-4 border border-gray-300 rounded-lg focus:ring-[#ff8006] focus:border-[#ff8006] outline-none text-base"
+                className="w-full p-4 border border-gray-300 text-black rounded-lg focus:ring-[#ff8006] focus:border-[#ff8006] outline-none text-base"
                 required
               />
               <textarea
                 rows={5}
                 placeholder="Your Message"
-                className="w-full p-4 border border-gray-300 rounded-lg focus:ring-[#ff8006] focus:border-[#ff8006] outline-none text-base"
+                className="w-full p-4 border border-gray-300 text-black rounded-lg focus:ring-[#ff8006] focus:border-[#ff8006] outline-none text-base"
                 required
               ></textarea>
               <button
                 type="submit"
-                className="mt-4 px-6 py-3 rounded-lg text-base font-medium bg-[#ff8006] text-white hover:bg-[#e67305] shadow-md transition-colors duration-300"
+                className="mt-4 px-6 py-3 rounded-lg text-base font-medium bg-[#ff8006] text-black hover:bg-[#e67305] shadow-md transition-colors duration-300"
               >
                 Send Message
               </button>
